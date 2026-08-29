@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.16.4](https://github.com/tenequm/pond/compare/v0.16.3...v0.16.4) - 2026-08-29
+
+### <!-- 2 -->🐛 Bug Fixes
+- **serve:** let /mcp answer on the deployment's own hostname ([#196](https://github.com/tenequm/pond/pull/196)) ([1355a3e](https://github.com/tenequm/pond/commit/1355a3e54371cccfd5c9f93a03bcb1585660f01f))
+  `pond serve` reached by a hostname other than localhost now answers MCP
+  once
+  you name that host with `--allowed-host` (or `POND_ALLOWED_HOSTS`);
+  without it
+  the `/mcp` route refuses every request with 403 while `/v1/*` keeps
+  working.
+  Local use is unchanged.
+
+### <!-- 5 -->📚 Documentation
+- harden the Windows install path from live fresh-eyes verification ([#191](https://github.com/tenequm/pond/pull/191)) ([a7d1b5c](https://github.com/tenequm/pond/commit/a7d1b5c86ed6727484e2e85d822d27a84848ac92))
+  Windows install docs now name the git prerequisite for `scoop bucket add` and the `core.longpaths` and `--target` steps a source build needs. Installed via `cargo binstall`? You have `pond.exe` only - use Scoop or the zip for scheduled sync.
+
+**Full Changelog**: https://github.com/tenequm/pond/compare/v0.16.3...v0.16.4
+
 ## [0.16.3](https://github.com/tenequm/pond/compare/v0.16.2...v0.16.3) - 2026-08-26
 
 ### <!-- 2 -->🐛 Bug Fixes
